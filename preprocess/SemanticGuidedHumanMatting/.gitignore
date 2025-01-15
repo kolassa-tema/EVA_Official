@@ -1,0 +1,7 @@
+__pycache__/
+pretrained/
+.vscode
+*.npy
+*.tar
+*egg-info/
+.idea/
