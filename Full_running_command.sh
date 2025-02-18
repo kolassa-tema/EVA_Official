@@ -1,6 +1,5 @@
 #!/bin/bash
 
-bash Prepare_ckpt.sh
 bash -c "source scripts/config.sh && bash scripts/S1_dwpose_extract.sh" &
 bash -c "source scripts/config.sh && bash scripts/S1_mask_extract.sh" &
 bash -c "source scripts/config_smplerx.sh && bash scripts/S1_smplerx_extract.sh" &

@@ -41,7 +41,7 @@ from prior import create_prior
 import math
 
 torch.backends.cudnn.enabled = False
-
+os.environ['PYOPENGL_PLATFORM'] = 'egl'
 
 def main(**args):
     output_folder = args.pop('output_folder')

@@ -17,7 +17,6 @@ Then, follow the commands below to set up necessary environments.
 Our configuration is based on NVIDIA-driver 535.183.01.
 
 ```bash
-# Based on CUDA 12.1
 conda create -n eva -y python=3.10
 conda activate eva
 bash scripts/env_install.sh
@@ -39,16 +38,22 @@ bash scripts/bug_fix.sh
 
 
 ## Pipeline for a real-world video
-First, process the data as follows (here is a sample video [sample](https://utexas-my.sharepoint.com/:u:/g/personal/hezhen_hu_austin_utexas_edu/ERi1KuGI2H9DlCHjFDiQPbcBrgbb85pLY6GG2eCR78bjWw?e=Fh8iRL).)
+First, process the data as follows (here is a sample video [link](https://utexas-my.sharepoint.com/:u:/g/personal/hezhen_hu_austin_utexas_edu/ERi1KuGI2H9DlCHjFDiQPbcBrgbb85pLY6GG2eCR78bjWw?e=Fh8iRL), video credit to CATIE Center.)
 ```
 010 (video_name)/  
 └── images/  
 ```
 
-Please run the following command to do the data preprocessing and avatar modeling.
+Please run the following command to perform data preprocessing.
+```bash
+bash Prepare_ckpt.sh
+```
+
+Then run the following command for avatar modeling.
 ```bash
 ROOT_PATH={PATH_TO_VIDEO_FOLDER} bash Full_running_command.sh
 ```
+After that, please check the results in EVA_main/output/[video name].
 
 ## Acknowledgements
 Parts of the code are taken or adapted from the following repos:

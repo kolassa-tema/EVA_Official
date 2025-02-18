@@ -10,6 +10,6 @@ pip install git+https://github.com/facebookresearch/detectron2.git
 pip install smplx onnxruntime plyfile lpips==0.1.4 configargparse
 pip install pytorch-lightning==1.9.0 pyrender timm einops webdataset
 pip install -r requirements.txt
-
+pip install ninja
 
 
