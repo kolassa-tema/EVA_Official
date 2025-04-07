@@ -1,0 +1,22 @@
+services:
+  myservice:
+    shm_size: '20gb'
+    build:
+      context: .
+      args:
+        CUDA_VERSION: 12.1.0
+        CUDA_ARCHITECTURES: 86;89;90
+        OS_VERSION: 22.04
+        TORCH_CUDA_ARCH_LIST: 8.6;8.9;9.0
+    command: tail -f /dev/null
+    volumes:
+      - ./:/workspace
+    deploy:
+      resources:
+        limits:
+          memory: 30G
+        reservations:
+          devices:
+            - count: all
+              capabilities: [gpu]
+    memswap_limit: 64G
